@@ -38,9 +38,11 @@ Using scenario `08_PredictState` implementing the `PredictState()` function with
 
 The next portion of this step was to use `09_PredictionCov` with a realistic IMU and to update  `GetRbgPrime()` using formula 52 of section *7.2 Transition Model* of (4) . However, row 1 col 2 of formula 52 in (4) may have an error. I tried both, and it did not seem to make much difference.
 
-is:        ￼
-![image2](./images/image2.png)
+is:  
+￼
 
+
+![image2a](./images/image2a.png)
 
 the second term prob should be:   
 ```
@@ -48,7 +50,10 @@ the second term prob should be:
 ```
 
 The final result was:
+
+
 ![image3](./images/image3.png)
+
 
 Where the blue and orange estimated vx always ran out.
 
