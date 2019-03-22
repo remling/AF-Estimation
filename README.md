@@ -1,14 +1,11 @@
 # AF-Estimation
-
-please refer to pdf file , which will be converted to markup when time allows
-
-
-Project 4 : Estimator - - Writeup
-Flying Car Nanodegree Program
-2019-02-24
-Roswitha Remling
+## Project 4, Udacity FCND Course 
+Udacity Self-Flying Car (Autonomous Flight) Nano Degree  
 
 The Tasks are described in https://github.com/udacity/FCND-Estimation-CPP
+
+Originally submitted: 2019-02-24, README updated 2019-03-21 
+____
 
 I also referred to :
 1. https://github.com/mehmetyldz87/FCND-Estimation (1)
