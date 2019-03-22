@@ -30,7 +30,7 @@ MeasuredStdDev_AccelXY = .5107
 
 Using scenario `07_AttitudeEstimation` and section *7.1.2 Nonlinear Complementary Filter* of (4), the most succinct solution was via Quaternion. Using (3) as a start, there was not much room for improvment to pass the success criteria.
 
-<image 1>
+![image1](./images/image1.png)
 
 ### Step 3: Prediction Step
 
@@ -39,7 +39,7 @@ Using scenario `08_PredictState` implementing the `PredictState()` function with
 The next portion of this step was to use `09_PredictionCov` with a realistic IMU and to update  `GetRbgPrime()` using formula 52 of section *7.2 Transition Model* of (4) . However, row 1 col 2 of formula 52 in (4) may have an error. I tried both, and it did not seem to make much difference.
 
 is:        ￼
-<image 2>
+![image2](./images/image2.png)
 
 
 the second term prob should be:   
@@ -48,8 +48,7 @@ the second term prob should be:
 ```
 
 The final result was:
-
-<image 3>
+![image3](./images/image3.png)
 
 Where the blue and orange estimated vx always ran out.
 
@@ -60,19 +59,19 @@ Tuning `QPosXYStd` and `QVelXYStd` only seemed to move the white lines, I could 
 
 Using scenario  `10_MagUpdate`  and section 7.3.2 of (4) the update was straightforward and resulted in  
 
-<image 4>
+![image4](./images/image4.png)
 
 ### Step 5: Closed Loop and GPS Update
 
 Using scenario `11_GPSUpdate` and tuning  the process noise model in `QuadEstimatorEKF.txt` , I used one simple `for` loop to `UpdateFromGPS()` using equations 53 adn 55 of (4), and met the success criteria:
 ￼
-<image 5>
+![image5](./images/image5.png)
 
 ### Step 6: Adding your controller
 
 Finetuning the `QuadControlParams.txt` with my own `QuadController.cpp` seemed to be by far the most time consuming step of this project. Eventually, I was able to complete  `11_GPSUpdate` within the success criteria:
 
-<image 6>
+![image6](./images/image6.png)
 
 ```
 Simulation #23 (../config/11_GPSUpdate.txt)
